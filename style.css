@@ -1,0 +1,351 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #7b68ee; /* Medium Slate Blue */
+  --accent-color: #ff6b6b; /* Coral */
+  --warning-color: #f39c12; /* Orange */
+  --success-color: #27ae60; /* Green */
+  --text-color: #2c3e50;
+  --light-gray: #ecf0f1;
+  --white: #ffffff;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+header {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header-content i {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+header h1 {
+  color: var(--text-color);
+  margin: 0;
+  font-weight: 700;
+}
+
+header p {
+  margin: 5px 0 0;
+  color: #7f8c8d;
+  font-size: 1.1em;
+}
+
+/* Card */
+.card {
+  background: var(--white);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: var(--shadow);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card h2 {
+  color: var(--text-color);
+  border-bottom: 2px solid var(--light-gray);
+  padding-bottom: 15px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card h2 i {
+  color: var(--primary-color);
+}
+
+/* Form */
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form-group label i {
+  color: var(--primary-color);
+  width: 20px;
+  text-align: center;
+}
+
+.form-group input {
+  padding: 12px 15px;
+  border: 2px solid var(--light-gray);
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+.btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(45deg, var(--accent-color), #ff8787);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 10px;
+}
+
+.btn-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Table */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+thead th {
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: var(--white);
+  padding: 15px;
+  text-align: left;
+  font-weight: 600;
+}
+
+thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+tbody td {
+  padding: 15px;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* Tombol Status Baru */
+.btn-status {
+  background-color: var(--warning-color);
+  color: var(--white);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+}
+
+.btn-status:hover {
+  background-color: #e67e22;
+  transform: scale(1.05);
+}
+
+.status-returned {
+  display: inline-block;
+  padding: 8px 15px;
+  background-color: var(--success-color);
+  color: var(--white);
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: default;
+}
+
+/* Notifikasi */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  background-color: var(--accent-color);
+  color: var(--white);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  transform: translateX(400px);
+  transition: transform 0.4s ease;
+  z-index: 1000;
+  font-weight: 500;
+}
+
+.notification.show {
+  transform: translateX(0);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  color: var(--white);
+  font-size: 0.9em;
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+  }
+
+  td {
+    border: none;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td:before {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+
+  td:nth-of-type(1):before {
+    content: "No";
+  }
+  td:nth-of-type(2):before {
+    content: "Nama Peminjam";
+  }
+  td:nth-of-type(3):before {
+    content: "Guru Pengampu";
+  }
+  td:nth-of-type(4):before {
+    content: "Kelas";
+  }
+  td:nth-of-type(5):before {
+    content: "Nama Barang";
+  }
+  td:nth-of-type(6):before {
+    content: "Jumlah";
+  }
+  td:nth-of-type(7):before {
+    content: "Waktu Peminjaman";
+  }
+  td:nth-of-type(8):before {
+    content: "Status";
+  } /* Sesuaikan label untuk HP */
+}
